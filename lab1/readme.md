@@ -1,13 +1,13 @@
 # Топология
 
-![alt text](https://github.com/dixitix/networks/raw/main/lab1/images/topology.png)
+![alt text](https://github.com/dixitix/networks/blob/main/lab1/images/topology.jpg)
 
 ## Доказательства того, что система работает:
 
 ## Работоспособность:
-![alt text](https://github.com/dixitix/networks/raw/main/lab1/images/ping1.jpg)
+![alt text](https://github.com/dixitix/networks/blob/main/lab1/images/ping1.jpg)
 
-![alt text](https://github.com/dixitix/networks/raw/main/lab1/images/ping2.jpg)
+![alt text](https://github.com/dixitix/networks/blob/main/lab1/images/ping2.jpg)
 
 ## STP:
 
@@ -189,7 +189,7 @@ Gi0/2               Desg FWD 4         128.3    P2p
 ## Проверка отказоустойчивости:
 
 На Switch отлючаем g0/0:
-![alt text](https://github.com/dixitix/networks/raw/main/lab1/images/shutdown.jpg)
+![alt text](https://github.com/dixitix/networks/blob/main/lab1/images/shutdown.jpg)
 
 Спустя время пинги продолжают присылаться:
-![alt text](https://github.com/dixitix/networks/raw/main/lab1/images/fault-tolerance.jpg)
+![alt text](https://github.com/dixitix/networks/blob/main/lab1/images/fault-tolerance.jpg)
