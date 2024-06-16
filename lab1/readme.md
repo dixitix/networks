@@ -1,6 +1,6 @@
 # Топология
 
-![alt text](https://github.com/dixitix/networks/blob/main/lab1/images/topology.jpg)
+![alt text](https://github.com/dixitix/networks/blob/main/lab1/images/topology.png)
 
 ## Доказательства того, что система работает:
 
