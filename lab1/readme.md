@@ -193,3 +193,111 @@ Gi0/2               Desg FWD 4         128.3    P2p
 
 Спустя время пинги продолжают присылаться:
 ![alt text](https://github.com/dixitix/networks/blob/main/lab1/images/fault-tolerance.jpg)
+
+## Описание работы:
+
+### VPC1
+```
+ip 10.0.10.1/24 10.0.10.2
+```
+
+### VPC2
+```
+ip 10.0.20.1/24 10.0.20.2
+```
+
+### Switch
+```
+en
+conf t
+vlan 10
+exit
+vlan 20
+exit
+spanning-tree vlan 10 root primary
+spanning-tree vlan 20 root primary
+interface g0/0
+switchport trunk allowed vlan 10,20
+switchport trunk encapsulation dot1q
+switchport mode trunk
+exit
+interface g0/1
+switchport trunk allowed vlan 10,20
+switchport trunk encapsulation dot1q
+switchport mode trunk
+exit
+interface g0/2
+switchport trunk allowed vlan 10,20
+switchport trunk encapsulation dot1q
+switchport mode trunk
+exit
+exit
+```
+
+### SwitchA
+```
+en
+conf t
+vlan 10
+exit
+vlan 20
+exit
+interface g0/0
+switchport trunk allowed vlan 10,20
+switchport trunk encapsulation dot1q
+switchport mode trunk
+exit
+interface g0/1
+switchport trunk allowed vlan 10,20
+switchport trunk encapsulation dot1q
+switchport mode trunk
+exit
+interface g0/2
+switch mode access
+switch access vlan 10
+exit
+exit
+```
+### SwitchB
+```
+en
+conf t
+vlan 10
+exit
+vlan 20
+exit
+interface g0/0
+switchport trunk allowed vlan 10,20
+switchport trunk encapsulation dot1q
+switchport mode trunk
+exit
+interface g0/1
+switchport trunk allowed vlan 10,20
+switchport trunk encapsulation dot1q
+switchport mode trunk
+exit
+interface g0/2
+switch mode access
+switch access vlan 20
+exit
+exit
+```
+### vlOS
+```
+en
+conf t
+interface g0/0
+no shutdown
+interface g0/0.10
+encapsulation dot1q 10   
+ip address 10.0.10.2 255.255.255.0
+exit
+interface g0/0
+no shutdown
+interface g0/0.20
+encapsulation dot1q 20
+ip address 10.0.20.2 255.255.255.0
+exit
+do write
+exit
+```
