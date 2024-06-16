@@ -1,7 +1,19 @@
-Доказательства того, что система работает:
+# Топология
 
-Switch A:
+![alt text](images/topology.png)
 
+## Доказательства того, что система работает:
+
+## Работоспособность:
+![alt text](images/ping1.jpg)
+
+![alt text](images/ping2.jpg)
+
+## STP:
+
+### SwitchA:
+
+```
 Switch#show spanning-tree
 
 VLAN0001
@@ -60,10 +72,11 @@ Interface           Role Sts Cost      Prio.Nbr Type
 ------------------- ---- --- --------- -------- --------------------------------
 Gi0/0               Root FWD 4         128.1    P2p 
 Gi0/1               Desg FWD 4         128.2    P2p
+```
 
+### SwitchB:
 
-Switch B:
-
+```
 Switch>show spanning-tree
 
 VLAN0001
@@ -108,10 +121,11 @@ Gi0/1               Root FWD 4         128.2    P2p
           
           
 VLAN0020
+```
 
+### Switch:
 
-Switch:
-
+```
 Switch>show spanning-tree
 
 VLAN0001
@@ -169,18 +183,13 @@ Interface           Role Sts Cost      Prio.Nbr Type
 Gi0/0               Desg FWD 4         128.1    P2p 
 Gi0/1               Desg FWD 4         128.2    P2p 
 Gi0/2               Desg FWD 4         128.3    P2p
+```
 
 
-![alt text](telegram-cloud-photo-size-2-5440730546574581450-y.jpg)
-
-![alt text](telegram-cloud-photo-size-2-5440730546574581451-y.jpg)
-
-
-
-Проверка отказоустойчивости:
+## Проверка отказоустойчивости:
 
 На Switch отлючаем g0/0:
-![alt text](telegram-cloud-photo-size-2-5440730546574581489-y.jpg)
+![alt text](images/shutdown.jpg)
 
 Спустя время пинги продолжают присылаться:
-![alt text](telegram-cloud-photo-size-2-5440730546574581487-y.jpg)
+![alt text](images/fault-tolerance.jpg)
